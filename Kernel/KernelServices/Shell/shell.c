@@ -69,8 +69,7 @@ void shell_init() {
             } else if (strcmp(cmd, TIME_STRING) == 0) {
                 print_time();
             } else if (strncmp(cmd, ECHO_STRING, 5) == 0) {
-                vga_print_scr(cmd + 5);
-                vga_newline();
+                vga_print_scr_nw(cmd + 5);
             } else if (strcmp(cmd, SHELLINFO_STRING) == 0) {
                 vga_print_scr_nw("OpenKernel Shell 1.0");
             } else if (strcmp(cmd, SHUTDOWN_STRING) == 0) {
@@ -78,11 +77,9 @@ void shell_init() {
             } else if (strcmp(cmd, REBOOT_STRING) == 0) {
                 sys_next_status("R");
             } else if (strcmp(cmd, VERSION_STRING) == 0 || strcmp(cmd, VER_STRING) == 0) {
-                vga_print_scr("OpenKernel v1.0");
-                vga_newline();
+                vga_print_scr_nw("OpenKernel v1.0");
             } else {
-                vga_print_scr("The command you entered could not be found. Please type list for a list of all commands.");
-                vga_newline();
+                vga_print_scr_nw("The command you entered could not be found. Please type list for a list of all commands.");
             }
 
             shell_inp();
