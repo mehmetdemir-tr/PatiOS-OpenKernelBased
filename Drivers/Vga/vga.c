@@ -6,7 +6,7 @@ static uint8_t txt_color = VGA_COLOR(VGA_COLOR_BLACK, VGA_COLOR_LIGHT_GREY);
 static uint8_t cx = 0;
 static uint8_t cy = 0;
 
-void vga_screen_clear() {
+void vga_clear_screen() {
     for (uint16_t y=0; y < VHEIGHT; y++) {
         for (uint16_t x=0; x < VWIDTH; x++) {
             vgabuffer[y * VWIDTH + x] = VGA_ENTRY(' ', txt_color);
@@ -19,7 +19,7 @@ void vga_screen_clear() {
 void vga_set_bg_color(uint8_t color) {
     uint8_t fg = txt_color & 0x0F;
     txt_color = VGA_COLOR(color, fg);
-    vga_screen_clear();
+    vga_clear_screen();
 }
 
 void vga_set_text_color(uint8_t color) {
@@ -45,7 +45,7 @@ void ptchar(char c) {
         }
     }
     if (cy >= VHEIGHT) {
-        vga_screen_clear();
+        vga_clear_screen();
     }
     vga_set_cursor(cx, cy);
 }
@@ -66,13 +66,13 @@ void vga_newline() {
     cy++;
 
     if (cy >= VHEIGHT) {
-        vga_screen_clear();
+        vga_clear_screen();
     }
     vga_set_cursor(cx, cy);
 }
 
 void vga_init() {
-    vga_screen_clear();
+    vga_clear_screen();
 }
 
 void vga_set_cursor(uint8_t x, uint8_t y) {

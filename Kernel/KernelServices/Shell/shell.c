@@ -65,7 +65,7 @@ void shell_init() {
                 vga_print_scr_nw(" \\____/|_____/      Architecture: x86 (32-bit)");
                 vga_print_scr_nw("                    Shell: OpenKernel Shell 1.0");
             } else if (strcmp(cmd, CLEAR_STRING) == 0 || strcmp(cmd, CLS_STRING) == 0) {
-                vga_screen_clear();
+                vga_clear_screen();
             } else if (strcmp(cmd, TIME_STRING) == 0) {
                 print_time();
             } else if (strncmp(cmd, ECHO_STRING, 5) == 0) {

@@ -8,7 +8,7 @@
 #define VBUFFER 0xB8000
 
 void vga_init();
-void vga_screen_clear();
+void vga_clear_screen();
 void vga_set_bg_color(uint8_t color);
 void vga_set_text_color(uint8_t color);
 void vga_print_scr(const char *str);

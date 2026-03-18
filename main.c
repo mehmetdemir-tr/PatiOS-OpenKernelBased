@@ -28,7 +28,7 @@ void kernel_main()
 
     // Main menu
     vga_set_color_scheme(VGA_COLOR_BLUE, VGA_COLOR_WHITE);
-    vga_screen_clear();
+    vga_clear_screen();
     vga_print_scr_nw("Welcome to the OpenKernel!");
     vga_print_scr_nw("OpenKernel version 1.0 (It was created for future use in OpenSoftware-World OS.)");
 
