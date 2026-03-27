@@ -3,8 +3,8 @@
 
 static uint16_t *vgabuffer = (uint16_t *)VBUFFER;
 static uint8_t txt_color = VGA_COLOR(VGA_COLOR_BLACK, VGA_COLOR_LIGHT_GREY);
-static uint8_t cx = 0;
-static uint8_t cy = 0;
+static uint8_t cx = 0; // cursor x
+static uint8_t cy = 0; // cursor y
 
 void vga_clear_screen() {
     for (uint16_t y=0; y < VHEIGHT; y++) {
