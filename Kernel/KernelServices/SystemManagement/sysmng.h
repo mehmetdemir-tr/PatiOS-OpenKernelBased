@@ -2,6 +2,7 @@
 #define SYSMNG_H
 
 #include "../../../SystemLib/Std/types.h"
+#include "../../../SystemLib/SystemIO/io.h"
 
 void sys_next_status(const char *mode);
 

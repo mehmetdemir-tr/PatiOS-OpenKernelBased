@@ -1,5 +1,4 @@
 #include "sysmng.h"
-#include "../../../SystemLib/SystemIO/io.h"
 
 void sys_next_status(const char *mode) {
     if (mode[0] == 'S') {
