@@ -49,20 +49,7 @@ $(KERNEL): $(OBJS)
 iso: $(KERNEL)
 	mkdir -p $(ISO)/boot/grub
 	cp $(KERNEL) $(ISO)/boot/
-	echo 'menuentry " OpenKernel 0.1" {' > $(ISO)/boot/grub/grub.cfg
-	echo '    multiboot /boot/OpenKernel.bin' >> $(ISO)/boot/grub/grub.cfg
-	echo '    boot' >> $(ISO)/boot/grub/grub.cfg
-	echo '}' >> $(ISO)/boot/grub/grub.cfg
-	echo 'menuentry " UEFI Settings" {' >> $(ISO)/boot/grub/grub.cfg
-	echo '    fwsetup' >> $(ISO)/boot/grub/grub.cfg
-	echo '	   echo "This option requires EFI mode."' >> $(ISO)/boot/grub/grub.cfg
-	echo '}' >> $(ISO)/boot/grub/grub.cfg
-	echo 'menuentry " About OpenKernel 0.1" {' >> $(ISO)/boot/grub/grub.cfg
-	echo '    echo "OpenKernel 0.1 - Experimental OS by OpenSoftware-World"' >> $(ISO)/boot/grub/grub.cfg
-	echo '    echo "This is a minimal kernel environment with shell and drivers."' >> $(ISO)/boot/grub/grub.cfg
-	echo '    echo "Have fun exploring!"' >> $(ISO)/boot/grub/grub.cfg
-	echo '    sleep 5' >> $(ISO)/boot/grub/grub.cfg
-	echo '}' >> $(ISO)/boot/grub/grub.cfg
+	cp Boot/grub/grub.cfg $(ISO)/boot/grub/
 	grub-mkrescue -o $(ISOFILE) $(ISO)
 
 # Run
