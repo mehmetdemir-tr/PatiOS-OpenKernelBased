@@ -1,10 +1,11 @@
 #include "sysmng.h"
 
-void sys_next_status(const char *mode) {
+void sys_next_status(const char *mode, uint32_t seconds) {
     /*
     S: Shutdown
     R: Reboot
     */
+   sleep(seconds);
     if (mode[0] == 'S') {
         outb(0x604, 0x00);
         outb(0x605, 0x20);
