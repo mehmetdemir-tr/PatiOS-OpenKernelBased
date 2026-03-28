@@ -73,9 +73,9 @@ void shell_init() {
             } else if (strcmp(cmd, SHELLINFO_STRING) == 0) {
                 vga_print_scr_nw("OpenKernel Shell 1.0");
             } else if (strcmp(cmd, SHUTDOWN_STRING) == 0) {
-                sys_next_status("S");
+                sys_next_status("S", 0);
             } else if (strcmp(cmd, REBOOT_STRING) == 0) {
-                sys_next_status("R");
+                sys_next_status("R", 0);
             } else if (strcmp(cmd, VERSION_STRING) == 0 || strcmp(cmd, VER_STRING) == 0) {
                 vga_print_scr_nw("OpenKernel v1.0");
             } else {
