@@ -54,7 +54,7 @@ OpenKernel/
 * [x] Kernel service infrastructure
 * [ ] Memory management
 * [ ] Interrupt handling (IDT)
-* [ ] Keyboard driver
+* [x] Keyboard driver
 * [ ] File system (basic FS)
 
 ---
