@@ -39,9 +39,9 @@ void vga_set_color_scheme(uint8_t bg_color, uint8_t text_color);
 #define VGA_COLOR(bg, fg) ((bg << 4) | (fg))
 #define VGA_ENTRY(ch, color) ((uint16_t)ch | (color << 8))
 
-#define DRIVER_NAME "OpenKernel VGA Driver"
-#define DRIVER_VER "0.1"
-#define DRIVER_DESC "A simple VGA text mode driver for OpenKernel"
-#define DRIVER_KRNL_VER "1.0"
+#define VGA_DRIVER_NAME "OpenKernel VGA Driver"
+#define VGA_DRIVER_VER "0.1"
+#define VGA_DRIVER_DESC "A simple VGA text mode driver for OpenKernel"
+#define VGA_DRIVER_KRNL_VER "1.0"
 
 #endif
