@@ -39,7 +39,7 @@ void shell_init() {
             idx = 0;
 
             if (strcmp(cmd, "list") == 0) {
-                vga_print_scr("Commands: clear, cls, list, seqlist, ver, shellinfo, osfetch, shutdown, reboot, time, version, echo\n");
+                vga_print_scr("Commands: clear, cls, list, seqlist, ver, shellinfo, osfetch, shutdown, reboot, time, version, echo, kernelinfo\n");
             } else if (strcmp(cmd, SEQLIST_STRING) == 0) {
                 vga_print_scr_nw("Commands:");
                 vga_print_scr_nw("clear");
@@ -54,6 +54,7 @@ void shell_init() {
                 vga_print_scr_nw("time");
                 vga_print_scr_nw("version");
                 vga_print_scr_nw("echo");
+                vga_print_scr_nw("kernelinfo");
             } else if (strcmp(cmd, OSFETCH_STRING) == 0) {
                 
                 vga_print_scr_nw("  ____   _____      root@shell");
@@ -78,6 +79,8 @@ void shell_init() {
                 sys_next_status("R", 0);
             } else if (strcmp(cmd, VERSION_STRING) == 0 || strcmp(cmd, VER_STRING) == 0) {
                 vga_print_scr_nw("OpenKernel v1.0");
+            } else if (strcmp(cmd, KRNL_INFO_STRING) == 0) {
+                vga_print_scr_nw("Coming soon...");
             } else {
                 vga_print_scr_nw("The command you entered could not be found. Please type list for a list of all commands.");
             }

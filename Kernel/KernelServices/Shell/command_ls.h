@@ -13,5 +13,6 @@
 #define TIME_STRING "time"
 #define VERSION_STRING "version"
 #define ECHO_STRING "echo "
+#define KRNL_INFO_STRING "kernelinfo"
 
 #endif
