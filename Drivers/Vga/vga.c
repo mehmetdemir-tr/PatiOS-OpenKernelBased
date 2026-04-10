@@ -16,9 +16,9 @@ void vga_clear_screen(const char *mode) {
         cx = 0;
         cy = 0;
     } else if (mode[0] == 'C') {
-        for (int y = 1; y < VHEIGHT - 1; y++) {  // 0 = üst bar, VHEIGHT-1 = alt bar
+        for (int y = 1; y < VHEIGHT - 1; y++) {
         for (int x = 0; x < VWIDTH; x++) {
-            vgabuffer[y * VWIDTH + x] = VGA_ENTRY(' ', txt_color);   // standart arkaplan ve yazı rengi
+            vgabuffer[y * VWIDTH + x] = VGA_ENTRY(' ', txt_color);
         }
     }
     cx = 0;

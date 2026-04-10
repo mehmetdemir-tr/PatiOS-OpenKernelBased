@@ -16,8 +16,8 @@ void ata_sys_disk_init() {
 void ata_sys_disk_read(uint32_t lba, uint8_t* buffer) {
     ata_wait_busy();
 
-    outb(ATA_DRIVE_SELECT, 0x0E | ((lba >> 24) & 0x0F)); // Select drive and set LBA bits 24-27
-    outb(ATA_SECTOR_COUNT, 1); // Read one sector
+    outb(ATA_DRIVE_SELECT, 0x0E | ((lba >> 24) & 0x0F));
+    outb(ATA_SECTOR_COUNT, 1);
 
     outb(ATA_LBA_LOW, (uint8_t)(lba));
     outb(ATA_LBA_MID, (uint8_t)(lba >> 8));
@@ -36,8 +36,8 @@ void ata_sys_disk_read(uint32_t lba, uint8_t* buffer) {
 void ata_sys_disk_write(uint32_t lba, const uint8_t* buffer) {
     ata_wait_busy();
 
-    outb(ATA_DRIVE_SELECT, 0x0E | ((lba >> 24) & 0x0F)); // Select drive and set LBA bits 24-27
-    outb(ATA_SECTOR_COUNT, 1); // Write one sector
+    outb(ATA_DRIVE_SELECT, 0x0E | ((lba >> 24) & 0x0F));
+    outb(ATA_SECTOR_COUNT, 1);
 
     outb(ATA_LBA_LOW, (uint8_t)(lba));
     outb(ATA_LBA_MID, (uint8_t)(lba >> 8));
