@@ -27,4 +27,9 @@ void ata_sys_disk_init();
 void ata_sys_disk_read(uint32_t lba, uint8_t* buffer);
 void ata_sys_disk_write(uint32_t lba, const uint8_t* buffer);
 
+#define ATA_DRIVER_NAME "OpenKernel ATA Disk Driver"
+#define ATA_DRIVER_VER "0.2"
+#define ATA_DRIVER_DESC "A simple ATA Disk Driver for OpenKernel"
+#define ATA_DRIVER_KRNL_VER "2.0"
+
 #endif
