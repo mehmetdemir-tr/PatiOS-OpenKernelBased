@@ -1,9 +1,14 @@
 #include "cpu.h"
 #include "../Vga/vga.h"
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wreturn-type"
+
 uint32_t cpuinfo_data(uint32_t *eax, uint32_t *ebx, uint32_t *ecx, uint32_t *edx, uint32_t function_id) {
     __asm__ __volatile__ ("cpuid": "=a"(*eax), "=b"(*ebx), "=c"(*ecx), "=d"(*edx): "a"(function_id));
 }
+
+#pragma GCC diagnostic pop
 
 void get_sys_cpuinfo(const char *mode) {
     if (mode[0] == 'B') {

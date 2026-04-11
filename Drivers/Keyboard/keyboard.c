@@ -14,7 +14,7 @@ static char kmap[128] = {
     '*',0,' ',0
 };
 
-static char kbf[KEY_BF_SIZE];
+static char kbf[KEY_BF_SIZE]__attribute__((unused));
 static uint8_t buf_head = 0;
 static uint8_t buf_tail = 0;
 
