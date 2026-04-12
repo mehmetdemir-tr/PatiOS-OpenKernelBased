@@ -28,9 +28,12 @@ typedef struct {
 uint32_t cpuinfo_data(uint32_t *eax, uint32_t *ebx, uint32_t *ecx, uint32_t *edx, uint32_t function_id);
 void get_sys_cpuinfo(const char *mode);
 void cpu_status(const char *mode);
+void cli(void);
+void sti(void);
+void hlt(void);
 
 #define CPU_DRIVER_NAME "OpenKernel CPU Driver"
-#define CPU_DRIVER_VER "0.2"
+#define CPU_DRIVER_VER "0.3"
 #define CPU_DRIVER_DESC "A simple CPU Driver for OpenKernel"
 #define CPU_DRIVER_KRNL_VER "2.0"
 

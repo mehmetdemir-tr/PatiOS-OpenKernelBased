@@ -32,3 +32,15 @@ void cpu_status(const char *mode) {
         __asm__ __volatile__ ("sti");
     }
 }
+
+void cli(void) {
+    __asm__ __volatile__ ("cli" ::: "memory");
+}
+
+void sti(void) {
+    __asm__ __volatile__ ("sti" ::: "memory");
+}
+
+void hlt(void) {
+    __asm__ __volatile__ ("hlt");
+}
