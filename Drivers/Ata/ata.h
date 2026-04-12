@@ -37,6 +37,7 @@ void ata_identify(uint8_t drive, uint16_t* buf);
 #define ATA_DRIVER_NAME "OpenKernel ATA Disk Driver"
 #define ATA_DRIVER_VER "0.3"
 #define ATA_DRIVER_DESC "A simple ATA Disk Driver for OpenKernel"
+#define ATA_DRIVER_AUTHOR "OpenSoftware-World"
 #define ATA_DRIVER_KRNL_VER "2.0"
 
 #endif

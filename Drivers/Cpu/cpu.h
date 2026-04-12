@@ -35,6 +35,7 @@ void hlt(void);
 #define CPU_DRIVER_NAME "OpenKernel CPU Driver"
 #define CPU_DRIVER_VER "0.3"
 #define CPU_DRIVER_DESC "A simple CPU Driver for OpenKernel"
+#define CPU_DRIVER_AUTHOR "OpenSoftware-World"
 #define CPU_DRIVER_KRNL_VER "2.0"
 
 #endif
