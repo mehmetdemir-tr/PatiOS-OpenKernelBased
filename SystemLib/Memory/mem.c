@@ -1,5 +1,9 @@
 #include "mem.h"
 
+static uint32_t heap_start;
+static uint32_t heap_end;
+static uint32_t heap_current;
+
 void* memset(void* dst, uint8_t val, uint32_t size) {
     uint8_t* p = (uint8_t*)dst;
 
@@ -30,3 +34,36 @@ int memcmp(const void* a, const void* b, uint32_t size) {
     }
     return 0;
 }
+
+void heap_init(uint32_t start, uint32_t size) {
+    heap_start = start;
+    heap_end = start + size;
+    heap_current = start;
+}
+
+void* kmalloc(uint32_t size) {
+    size = (size + 3) & ~3;
+
+    if (heap_current + size >= heap_end) {
+        return (void*)0;
+    }
+    void* addr = (void*)heap_current;
+    heap_current += size;
+    return addr;
+}
+
+void kfree(void* ptr) {
+    (void)ptr;
+}
+
+/*
+Example:
+
+heap_init(0x100000, 1024 * 1024); // 1 MB heap
+
+int* a = (int*)kmalloc(4);
+int* b = (int*)kmalloc(16);
+
+*a = 10;
+*b = 20;
+*/
