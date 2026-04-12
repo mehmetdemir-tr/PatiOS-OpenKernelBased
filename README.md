@@ -52,10 +52,10 @@ OpenKernel/
 * [x] VGA text mode output system
 * [x] Basic CPU control (CLI, HLT, etc.)
 * [x] Kernel service infrastructure
-* [ ] Memory management
+* [x] Memory management
 * [ ] Interrupt handling (IDT)
 * [x] Keyboard driver
-* [ ] File system (basic FS)
+* [x] File system (basic FS)
 
 ---
 
