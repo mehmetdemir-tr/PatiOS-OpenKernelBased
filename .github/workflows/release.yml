@@ -31,6 +31,9 @@ jobs:
           mkdir -p package/OpenKernel
 
           rsync -av \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='version.txt' \
             --exclude='package' \
             ./ package/OpenKernel/
 
@@ -61,7 +64,7 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: openkernel-${{ steps.version.outputs.version }}
+          tag_name: openkernel${{ steps.version.outputs.version }}
           name: OpenKernel ${{ steps.version.outputs.version }}
           body_path: CHANGELOG.md
           files: |
