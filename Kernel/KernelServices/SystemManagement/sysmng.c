@@ -17,3 +17,19 @@ void sys_next_status(const char *mode, uint32_t seconds) {
         outb(0x64, 0xFE);
     }
 }
+
+void exit_program(const char *mode, const char *message) {
+    /*
+    D: Default
+    C: Custom
+    */
+    if (mode[0] == 'D') {
+        vga_print_scr_nw("Exiting program...");
+    } else if (mode[0] == 'C') {
+        vga_print_scr_nw(message);
+    }
+
+    while (true) {
+        __asm__ __volatile__ ("hlt");
+    }
+}
