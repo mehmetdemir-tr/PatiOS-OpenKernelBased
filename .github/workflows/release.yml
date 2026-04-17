@@ -57,7 +57,7 @@ jobs:
             COMMITS=$(git log $PREVIOUS..$CURRENT --pretty=format:"- %s")
           fi
 
-          echo "## 🚀 OpenKernel v$VERSION" > CHANGELOG.md
+          echo "## 🕒 Changes:" > CHANGELOG.md
           echo "" >> CHANGELOG.md
           echo "$COMMITS" >> CHANGELOG.md
 
