@@ -7,6 +7,7 @@ typedef struct {
     uint8_t driver_name;
     uint8_t driver_desc;
     uint8_t driver_ver;
+    uint8_t driver_author;
     uint8_t driver_krnl_ver;
 } openkernel_drivers_information;
 
