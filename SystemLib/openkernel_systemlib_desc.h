@@ -7,12 +7,12 @@
 #define OPENKERNEL_SYSTEMLIB_PKG_VER "1.0"
 
 typedef struct {
-    uint8_t module_name;
-    uint8_t module_desc;
-    uint8_t module_ver;
-    uint8_t module_author;
-    uint8_t module_file_name;
-    uint8_t module_krnl_ver;
+    const char *module_name;
+    const char *module_desc;
+    const char *module_ver;
+    const char *module_author;
+    const char *module_file_name;
+    const char *module_krnl_ver;
 } openkernel_systemlib_module_information;
 
 #endif
