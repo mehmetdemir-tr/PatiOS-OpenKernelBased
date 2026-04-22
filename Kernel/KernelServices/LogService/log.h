@@ -1,7 +1,7 @@
 #ifndef LOG_H
 #define LOG_H
 
-#include "../../../Drivers/Vga/vga.h"
+#include <OpenKernel/Drivers/Vga/vga.h>
 
 enum kernel_log_level {
     LOG_SUCCESS,
