@@ -1,4 +1,4 @@
-#include "basic_syscall.h"
+#include "syscall.h"
 
 int syscall(int id, void* arg) {
     return syscall_handler(id, arg);
