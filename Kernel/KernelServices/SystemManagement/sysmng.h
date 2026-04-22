@@ -5,6 +5,7 @@
 #include <OpenKernel/SystemLib/SystemIO/io.h>
 #include <OpenKernel/SystemLib/TimeMng/time.h>
 #include <OpenKernel/Drivers/Vga/vga.h>
+#include <OpenKernel/Drivers/Cpu/cpu.h>
 
 void sys_next_status(const char *mode, uint32_t seconds);
 void exit_program(const char *mode, const char *message);

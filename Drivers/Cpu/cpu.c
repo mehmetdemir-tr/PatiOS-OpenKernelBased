@@ -26,10 +26,10 @@ void get_sys_cpuinfo(const char *mode) {
 
 void cpu_status(const char *mode) {
     if (mode[0] == 'S') {
-        __asm__ __volatile__ ("hlt");
+        hlt();
     }
     if (mode[0] == 'A') {
-        __asm__ __volatile__ ("sti");
+        sti();
     }
 }
 

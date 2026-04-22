@@ -1,6 +1,8 @@
 #include "time.h"
 #include <OpenKernel/Drivers/Vga/vga.h>
 #include <OpenKernel/SystemLib/SystemIO/io.h>
+#include <OpenKernel/Drivers/Cpu/cpu.h>
+#include <OpenKernel/SystemLib/TypeConversion/type_conv.h>
 
 systime sys_time = {0, 0, 0, 0, 0, 0};
 
@@ -10,10 +12,6 @@ systime sys_time = {0, 0, 0, 0, 0, 0};
 static uint8_t rtc_read(uint8_t reg) {
     outb(RTC_ADDR, reg);
     return inb(RTC_DATA);
-}
-
-static uint8_t bcd_to_bin(uint8_t val) {
-    return ((val / 16) * 10) + (val & 0x0F);
 }
 
 void uptime() {
@@ -74,6 +72,6 @@ void print_time() {
 
 void sleep(uint32_t seconds) {
     for (uint64_t i = 0; i < (uint64_t)seconds * 50000000ULL; i++) {
-        __asm__ __volatile__ ("nop");
+        nop();
     }
 }

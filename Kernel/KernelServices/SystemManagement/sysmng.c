@@ -12,7 +12,7 @@ void sys_next_status(const char *mode, uint32_t seconds) {
         outb(0x605, 0x20);
     }
     else if(mode[0] == 'R') {
-        __asm__ volatile ("cli");
+        cli();
         while (inb(0x64) & 0x02);
         outb(0x64, 0xFE);
     }
@@ -30,6 +30,6 @@ void exit_program(const char *mode, const char *message) {
     }
 
     while (true) {
-        __asm__ __volatile__ ("hlt");
+        hlt();
     }
 }
