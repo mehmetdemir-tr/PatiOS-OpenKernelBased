@@ -15,6 +15,13 @@ typedef struct {
     const char *module_krnl_ver;
 } openkernel_systemlib_module_information_t;
 
-
+openkernel_systemlib_module_information_t kernel_func_lib;
+openkernel_systemlib_module_information_t memory_lib;
+openkernel_systemlib_module_information_t std_lib;
+openkernel_systemlib_module_information_t types_lib;
+openkernel_systemlib_module_information_t syscalls_lib;
+openkernel_systemlib_module_information_t systemio_lib;
+openkernel_systemlib_module_information_t timemng_lib;
+openkernel_systemlib_module_information_t type_conv_lib;
 
 #endif
